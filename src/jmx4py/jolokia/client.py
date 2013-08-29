@@ -213,7 +213,7 @@ class JmxClient(object):
         return resp
 
 
-    def execute(self, mbean, operation, args=[]):
+    def execute(self, mbean, operation, args=[], **kw):
         """ J4pExecRequests are used for executing operation on MBeans.
             The constructor takes as mandatory arguments the MBean's object
             name, the operation name and any arguments required by the
@@ -230,7 +230,8 @@ class JmxClient(object):
             type='exec',
             mbean=mbean,
             operation=operation,
-            arguments=args
+            arguments=args,
+            **kw
             )
         return resp
 
